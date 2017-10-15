@@ -12,3 +12,20 @@ There are edge cases frequently included in resets etc that seem like overkill t
 
 But man, would it suck to have to look these up later.
 
+```
+//
+// Correct element displays
+//
+
+output {
+  display: inline-block;
+}
+
+summary {
+  display: list-item; // Add the correct display in all browsers
+}
+
+template {
+  display: none; // Add the correct display in IE
+}
+```

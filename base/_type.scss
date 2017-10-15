@@ -1,0 +1,106 @@
+
+
+//
+// Typography
+//
+
+// Remove top margins from headings
+//
+// By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
+// margin for easier control within type scales as it avoids margin collapsing.
+// stylelint-disable selector-list-comma-newline-after
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: $headings-margin-bottom;
+}
+
+
+// Reset margins on paragraphs
+//
+// Similarly, the top margin on `<p>`s get reset. However, we also reset the
+// bottom margin to use `rem` units instead of `em`.
+p {
+  margin-top: 0;
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+// Abbreviations
+//
+// 1. Remove the bottom border in Firefox 39-.
+// 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+// 3. Add explicit cursor to indicate changed behavior.
+// 4. Duplicate behavior to the data-* attribute for our tooltip plugin
+
+abbr[title],
+abbr[data-original-title] { // 4
+  text-decoration: underline; // 2
+  text-decoration: underline dotted; // 2
+  cursor: help; // 3
+  border-bottom: 0; // 1
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: $dt-font-weight;
+}
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0; // Undo browser default
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+dfn {
+  font-style: italic; // Add the correct font style in Android 4.3-
+}
+
+
+
+
+//
+// Code
+//
+
+// stylelint-disable font-family-no-duplicate-names
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; // Correct the inheritance and scaling of font size in all browsers.
+  font-size: 1em; // Correct the odd `em` font sizing in all browsers.
+}
+// stylelint-enable font-family-no-duplicate-names
+
+pre {
+  // Remove browser default top margin
+  margin-top: 0;
+  // Reset browser default of `1em` to use `rem`s
+  margin-bottom: 1rem;
+  // Don't allow content to break outside
+  overflow: auto;
+  // We have @viewport set which causes scrollbars to overlap content in IE11 and Edge, so
+  // we force a non-overlapping, non-auto-hiding scrollbar to counteract.
+  -ms-overflow-style: scrollbar;
+}
