@@ -28,4 +28,12 @@ summary {
 template {
   display: none; // Add the correct display in IE
 }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 40px;
+}
 ```
